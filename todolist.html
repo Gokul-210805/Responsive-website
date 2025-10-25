@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="todo.css">
+
+</head>
+<body>
+      <div class="app">
+    <div class="panel">
+      <div class="brand">
+        <div class="logo">TD</div>
+        <div>
+          <h1>Attractive To‑Do</h1>
+          <p class="lead">A beautiful frontend-only to‑do with images, local persistence & animations.</p>
+        </div>
+      </div>
+
+      <form id="addForm" class="add" onsubmit="return false">
+        <input id="taskInput" type="text" placeholder="Add a new task..." required />
+        <button id="addBtn" type="submit">Add</button>
+      </form>
+
+      <div class="controls">
+        <button id="clearDone">Clear Completed</button>
+        <button id="clearAll">Clear All</button>
+        <button id="darkToggle">Toggle Dark</button>
+      </div>
+
+      <div class="dropzone" id="dropzone">Drag & drop an image here, or click to attach (image will be added to the next task)</div>
+      <input id="fileInput" type="file" accept="image/*" style="display:none" />
+
+      <div style="margin-top:14px;display:flex;gap:8px;align-items:center;justify-content:space-between">
+        <div class="muted">Saved locally in your browser</div>
+        <div class="muted">Tip: click task image to remove it</div>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="topbar">
+        <div class="search"><input id="search" placeholder="Search tasks or tags..." /></div>
+        <div class="filters">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="active">Active</button>
+          <button data-filter="done">Done</button>
+        </div>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+
+      <div id="emptyMsg" class="empty" style="display:none">No tasks yet — add one and attach an image for more fun 🎉</div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
